@@ -194,8 +194,8 @@ body {
   }
   
   .close {
-    top: 15%;
-    right: 41%;
+    top: 105px;
+    right: 633px;
     color: var(--orange);
     float: right;
     font-size: 28px;
