@@ -1,0 +1,53 @@
+$primary: #FFE071;
+$bg: #0C151D;
+$text-color: #F1F2F4;
+
+@function shade($color, $percentage) {
+    $shadedColor: mix($bg, $color, $percentage);
+    @return $shadedColor;
+}
+
+@function shadow-btn($color, $percentage) {
+    $lightness: lightness($color);
+    $shadedColor: mix($bg, $color, $percentage);
+    $shadedColor: hsla($lightness, saturation($color), lightness($shadedColor), 25%);
+    @return $shadedColor;
+}
+
+body{
+    background-color: $bg !important;
+    color:  $text-color !important;
+}
+
+.btn-primary{
+    font-weight: 600 !important;
+    color: $bg !important;
+    background: $primary !important;
+    border-color: $primary !important;
+}
+
+.btn-primary:hover{
+    color: $bg !important;
+    background-color: shade($primary, 25%) !important;
+    border-color: shade($primary, 25%) !important;
+}
+
+.btn-primary:focus{
+    box-shadow: shadow-btn($primary, 25%) 0px 0px 20px;
+}
+
+.btn-outline-primary{
+    font-weight: 600 !important;
+    color: $text-color !important;
+    border-color: $primary !important;
+}
+
+.btn-outline-primary:hover{
+    color: $bg !important;
+    background-color: shade($primary, 25%) !important;
+    border-color: shade($primary, 25%) !important;
+}
+
+.btn-outline-primary:focus{
+    box-shadow: shadow-btn($primary, 25%) 0px 0px 20px;
+}
