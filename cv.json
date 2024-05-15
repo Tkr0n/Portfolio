@@ -1,113 +1,99 @@
 {
   "basics": {
-    "name": "Miguel Ángel Durán",
-    "label": "Full Stack Developer con más de 15 años de experiencia & Creador de Contenido de Programación",
+    "name": "Saydenier Palacios",
+    "label": "Full Stack Developer con más de 3 años de experiencia",
     "image": "/me.webp",
-    "email": "miduga@gmail.com",
-    "phone": "+34 688888888",
-    "url": "https://midu.dev",
-    "summary": "+15 años de experiencia como Desarrollador Web. Actualmente soy Creador de Contenido y Divulgador sobre Programación. Vivo en Barcelona, España. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos de empresas multinacionales.",
+    "email": "saydenier@gmail.com",
+    "phone": "+58 4125554988",
+    "url": "https://tkr0n.github.io/Portfolio/",
+    "summary": "Años de experiencia como desarrollador fullstack, participando en todas las etapas de análisis, desarrollo, testo, publicación y mantenimiento de soluciones tecnológicas. Excelente manejo de la relación Consultor - Cliente. Capacidad de liderazgo y buenas habilidades de comunicación con el resto del equipo.",
     "location": {
-      "address": "",
-      "postalCode": "08820",
-      "city": "el Prat de Llobregat",
-      "countryCode": "ES",
-      "region": "España"
+      "address": "Castillejo",
+      "postalCode": "1221",
+      "city": "Guatire",
+      "countryCode": "VE",
+      "region": "Venezuela"
     },
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "midudev",
-        "url": "https://linkedin.com/in/midudev"
-      },
-      {
-        "network": "X",
-        "username": "midudev",
-        "url": "https://x.com/midudev"
+        "username": "saydenier",
+        "url": "https://linkedin.com/in/saydenier"
       },
       {
         "network": "GitHub",
         "username": "midudev",
-        "url": "https://github.com/midudev"
+        "url": "https://github.com/Tkr0n"
       }
     ]
   },
   "work": [
     {
-      "name": "midudev",
-      "position": "Divulgador sobre Programación Web",
-      "url": "https://twitch.tv/midudev",
-      "startDate": "2021-01-01",
+      "name": "Vecoresystems",
+      "position": "Semi senior fullstack developer",
+      "url": "https://vecoresys.com/",
+      "startDate": "2020-09-01",
       "endDate": null,
-      "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
+      "summary": "Desarrollé diferentes módulos para aplicativo ecommerce. Desarrollé servicios web para el consumo por parte del aplicativo ecommerce, haciendo uso de las buenas prácticas así como de una arquitectura limpia y diferentes patrones de diseño. Integración con servicios de terceros como FedEx. Revisión de soluciones desarrolladas por nuevos integrantes del equipo.",
       "highlights": [
-        "Started the company"
+        "Team key member"
       ]
     },
     {
-      "name": "Adevinta",
-      "position": "Lead Frontend Architect",
-      "url": "https://twitch.tv/midudev",
-      "startDate": "2016-06-01",
-      "endDate": "2022-09-01",
-      "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
+      "name": "ASPTG Consulting",
+      "position": "Fullstack Developer Consultor",
+      "url": "https://www.asptg.com/",
+      "startDate": "2020-10-01",
+      "endDate": "2023-11-01",
+      "summary": "Tomé las riendas técnicas del desarrollo de un nuevo producto. Fuí líder técnico de un equipo de desarrollo. Optimicé diferentes querys en BD SQL. Desarrollé un proceso de generación de boletines educativos. Optimización de proceso en segundo plano de carga de notas en el que logré mejorar los tiempos de respuesta en más de un 50%. Desarrollé aplicativos innovando con últimas tecnologías.",
       "highlights": [
-        "Started the company"
+        "Tech Lead",
+        "Process optimization",
+        "Use of new technologies"
       ]
     },
     {
-      "name": "Hubii",
-      "position": "Senior FrontEnd Developer",
-      "startDate": "2011-03-01",
-      "endDate": "2016-05-01",
-      "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefónica para desarrollar la primera app para televisores con FirefoxOS.",
-      "highlights": [
-        "Started the company"
-      ]
+      "name": "Baneso, Banco Universal",
+      "position": "Senior .NET Consultor",
+      "startDate": "2023-10-01",
+      "endDate": "2024-04-31",
+      "summary": "Análisis y documentación de legacy code. Desarrollé nuevas librerías de encriptación internas haciendo uso del Algoritmo AES (256). Análisis y diseño de nuevas API's Restfull para la migración de los procesos antes contenidos en web services (ASMX).",
+      "highlights": null
     }
   ],
   "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
+    "organization": "Centro Cristiano Internacional Jesús Agua Viva",
+    "position": "Voluntario",
+    "url": null,
+    "startDate": "2019-02-01",
+    "endDate": null,
+    "summary": "En desarrollo de aplicativo administrativo para congregación cristiana. En desarrollo de sitio web.",
+    "highlights": null
   }],
   "education": [{
-    "institution": "Universitat Oberta de Catalunya",
-    "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
-    "studyType": "Bachelor",
-    "startDate": "2003-01-01",
-    "endDate": "2009-01-01",
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021-11-07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014-10-01",
-    "url": "https://publication.com",
-    "summary": "Description…"
-  }],
+      "institution": "U.E. Doña Benilde",
+      "url": null,
+      "area": "Bachiller en ciencias",
+      "studyType": "Bachillerato",
+      "startDate": "2010-01-07",
+      "endDate": "2015-06-15",
+      "score": null,
+      "courses": null
+    },
+    {
+      "institution": "Instituto Tecnológico Elías Calixto Pompa",
+      "url": null,
+      "area": "Informática (No culminado)",
+      "studyType": "Administración de sistemas informáticos",
+      "startDate": "2017-01-07",
+      "endDate": "2019-06-15",
+      "score": null,
+      "courses": null
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
   "skills": [
     {
       "name": "HTML",
@@ -118,21 +104,21 @@
     },
     {
       "name": "CSS",
-      "level": "Master",
+      "level": "Avanzado",
       "keywords": [
         "Desarrollo Web", "Frontend", "Diseño Responsive"
       ]
     },
     {
       "name": "JavaScript",
-      "level": "Master",
+      "level": "Avanzado",
       "keywords": [
         "Desarrollo Web", "Frontend", "Backend", "Fullstack"
       ]
     },
     {
       "name": "Tailwind",
-      "level": "Avanzado",
+      "level": "Intermedio",
       "keywords": [
         "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
       ]
@@ -146,44 +132,72 @@
     },
     {
       "name": "Node",
-      "level": "Avanzado",
+      "level": "Principiante",
       "keywords": [
         "Desarrollo Web", "Backend", "JavaScript", "Servidor"
       ]
     },
     {
       "name": "MySQL",
-      "level": "Avanzado",
+      "level": "Intermedio",
+      "keywords": [
+        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
+      ]
+    },
+    {
+      "name": "SQL Server",
+      "level": "Master",
       "keywords": [
         "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
       ]
     },
     {
       "name": "Git",
-      "level": "Avanzado",
+      "level": "Intermedio",
       "keywords": [
         "Control de Versiones", "Colaboración", "Código Fuente"
       ]
     },
     {
       "name": "GitHub",
-      "level": "Avanzado",
+      "level": "Intermedio",
       "keywords": [
         "Control de Versiones", "Colaboración", "Código Fuente", "Git"
       ]
     },
     {
-      "name": "Next.js",
-      "level": "Avanzado",
+      "name": "Csharp",
+      "level": "Master",
       "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
+        "Desarrollo Web", "Backend", "API", "Patrones de Diseño", "Arquitectura de software"
+      ]
+    },
+    {
+      "name": "Net",
+      "level": "Master",
+      "keywords": [
+        "Desarrollo Web", "Backend", ".Net Framework", ".NET Core", "ASP"
       ]
     },
     {
       "name": "React",
-      "level": "Avanzado",
+      "level": "Principiante",
       "keywords": [
         "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+      ]
+    },
+    {
+      "name": "Angular",
+      "level": "Intermedio",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
+      ]
+    },
+    {
+      "name": "Astro",
+      "level": "Intermedio",
+      "keywords": [
+        "Desarrollo Web", "Frontend", "HTML Framework"
       ]
     }
   ],
@@ -210,66 +224,59 @@
   }],
   "projects": [
     {
-      "name": "mars.codes",
+      "name": "That New tire",
       "isActive": true,
-      "description": "Historia interactiva con retos de programación para viajar a Marte",
+      "description": "Ecommerce de repuestos de vehículos",
       "highlights": [
-        "Elige tu propia aventura",
+        "Mantenimiento código legacy",
+        "Desarrollo de nueva versión con Angular",
         "En desarrollo"
       ],
-      "url": "https://mars.codes"
+      "url": "https://thatnewtire.com"
     },
     {
-      "name": "AdventJS",
+      "name": "I-ERP",
       "isActive": true,
-      "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
+      "description": "ERP desarrollado con tecnología en la nube (Azure)",
       "highlights": [
-        "+1 millón de visitas",
-        "Multidioma",
-        "JavaScript & TypeScript"
+        "Desarrollo de facturación virtual",
+        "Multidioma"
       ],
-      "url": "https://adventjs.dev"
+      "url": "https://www.asptg.com/i-erp"
     },
     {
-      "name": "Codember",
+      "name": "ICPNA",
       "isActive": true,
-      "description": "Juego interactivo de programación con retos y secretos",
+      "description": "Desarrollo de funcionalidades para sistema de administración interna, matrícula online, integraciones con aplicativo canva y canal de denuncias",
       "highlights": [
-        "+2000 usuarios activos",
-        "Retos para cualquier lenguaje"
+        "+3000 usuarios activos",
+        "Procesos complejos de notificación",
+        "Optimización de procesos",
+        "desarrollo y mantenimiento de jobs SQL"
       ],
-      "url": "https://codember.dev"
+      "url": "https://matricula.icpna.edu.pe/Login/Login"
     },
     {
-      "name": "codi.link",
+      "name": "Futura Schools",
       "isActive": true,
-      "description": "Playground de código HTML, CSS y JavaScript para compartir",
+      "description": "Desarrollo de funcionalidades para intranet administrativa y de control.",
       "highlights": [
-        "100k visitas al mes",
-        "Desarrollado por la comunidad"
+        "Optimización tiempo de ejecución de carga de notas en +50%",
+        "Integración Azure Functions",
+        "Desarrollo de generación de boletinos educativos automatizados"
       ],
-      "url": "https://codi.link",
-      "github": "https://github.com/midudev/codi.link"
+      "url": "https://futuraschools.edu.pe/"
     },
     {
       "name": "Pruebas Técnicas",
       "isActive": true,
-      "description": "Lista de pruebas técnicas de empresas para practicar programación",
+      "description": "Lista de pruebas técnicas realizadas en procesos de selección",
       "highlights": [
-        "100% gratuito",
-        "+500 soluciones de la comunidad"
+        "En desarrollo",
+        "Todos los repos con sufijo challenge"
       ],
-      "url": "https://pruebastecnicas.com",
-      "github": "https://github.com/midudev/pruebas-tecnicas"
-    },
-    {
-      "name": "miduConf",
-      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
-      "highlights": [
-        "+15k tickets repartidos",
-        "+50k espectadores en directo"
-      ],
-      "url": "https://miduconf.com"
+      "url": "https://github.com/tkr0n",
+      "github": "https://github.com/tkr0n/"
     }
   ]
 }
