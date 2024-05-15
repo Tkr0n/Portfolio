@@ -55,6 +55,7 @@
     {
       "name": "Baneso, Banco Universal",
       "position": "Senior .NET Consultor",
+      "url": "https://www.banesco.com/",
       "startDate": "2023-10-01",
       "endDate": "2024-04-31",
       "summary": "Analysis and documentation of legacy code. Developed new internal encryption libraries using the AES Algorithm (256). Analysis and design of new Restfull API's for the migration of processes previously contained in web services (ASMX).",
