@@ -2,7 +2,7 @@
   "basics": {
     "name": "Saydenier Palacios",
     "label": "Full Stack Developer with 3+ years of experience",
-    "image": "Portfolio/me.webp",
+    "image": "./me.webp",
     "email": "saydenier@gmail.com",
     "phone": "+58 4125554988",
     "url": "https://tkr0n.github.io/Portfolio/",
