@@ -2,7 +2,7 @@
   "basics": {
     "name": "Saydenier Palacios",
     "label": "Full Stack Developer with 3+ years of experience",
-    "image": "./me.webp",
+    "image": "public/me.webp",
     "email": "saydenier@gmail.com",
     "phone": "+58 4125554988",
     "url": "https://tkr0n.github.io/Portfolio/",
@@ -29,11 +29,20 @@
   },
   "work": [
     {
+      "name": "Sotec",
+      "position": "Fullstack developer",
+      "url": "https://sotec.es/",
+      "startDate": "2024-07-24",
+      "endDate": null,
+      "summary": "Currently working on eManage, their intern ERP system, brinding support to old modules and developing new ones with newer technologies",
+      "highlights": null
+    },
+    {
       "name": "Vecoresystems",
       "position": "Semi senior fullstack developer",
       "url": "https://vecoresys.com/",
       "startDate": "2020-09-01",
-      "endDate": null,
+      "endDate": "2024-06-01",
       "summary": "I developed different modules for ecommerce application. Developed web services for consumption by the ecommerce application, making use of best practices as well as a clean architecture and different design patterns. Integration with third party services such as FedEx. Review of solutions developed by new team members.",
       "highlights": [
         "Team key member"
