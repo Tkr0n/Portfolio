@@ -22,7 +22,7 @@ const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
-const cvUrl = "/cv/Saydenier Palacios ENG.pdf"
+const cvUrl = "/cv/Saydenier-Palacios-ENG.pdf"
 ---
 
 <Section>
@@ -255,7 +255,8 @@ const cvUrl = "/cv/Saydenier Palacios ENG.pdf"
   let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
   function updateLangDisplay() {
-    langText.textContent = currentLang === 'en' ? 'EN/ES' : 'ES/EN';
+    // Show TARGET language (what user will switch TO)
+    langText.textContent = currentLang === 'en' ? 'ES' : 'EN';
     html.lang = currentLang === 'en' ? 'en' : 'es';
   }
 
@@ -268,9 +269,7 @@ const cvUrl = "/cv/Saydenier Palacios ENG.pdf"
     localStorage.setItem('portfolio-lang', currentLang);
     updateLangDisplay();
     
-    // Reload page with new language (for full i18n, this would load different content)
-    // For now, we just update the UI. A full implementation would require
-    // either client-side content swapping or separate language routes.
+    // Reload page with new language
     window.location.reload();
   });
 </script>
