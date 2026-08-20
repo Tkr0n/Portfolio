@@ -22,8 +22,7 @@ const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
-const cvEnglish = "/cv/Saydenier Palacios ENG.pdf"
-const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
+const cvUrl = "/cv/Saydenier Palacios ENG.pdf"
 ---
 
 <Section>
@@ -79,31 +78,24 @@ const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
             )
           })
         }
+        <a
+          href={cvUrl}
+          title="Descargar currículum"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cv-button"
+        >
+          <span class="cv-button-text">Descargar CV</span>
+        </a>
+        <button
+          id="lang-toggle"
+          class="lang-button"
+          title="Cambiar idioma"
+          aria-label="Cambiar idioma"
+        >
+          <span id="lang-text">EN/ES</span>
+        </button>
       </footer>
-      <div class="cv-buttons">
-        {cvEnglish && (
-          <a
-            href={cvEnglish}
-            title="Descargar currículum en inglés"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cv-button"
-          >
-            <span>Descargar CV (EN)</span>
-          </a>
-        )}
-        {cvSpanish && (
-          <a
-            href={cvSpanish}
-            title="Descargar currículum en español"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cv-button"
-          >
-            <span>Descargar CV (ES)</span>
-          </a>
-        )}
-      </div>
     </div>
     <figure>
       <img src={image} alt={name} />
@@ -181,25 +173,49 @@ const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
     border: 1px solid #b5b5b5;
   }
 
-  .cv-button {
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    background: #efd874;
-    color: #111;
-    font-weight: 500;
-    border-radius: 4px;
-    text-decoration: none;
+  footer .cv-button,
+  footer .lang-button {
+    height: 32px;
+    border-radius: 6px;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
   }
 
-  .cv-button span {
-    margin-right: 0.5rem;
+  footer .cv-button {
+    color: #111;
+    background: #efd874;
+    padding: 0 0.75rem;
+    font-weight: 500;
+    font-size: 0.65rem;
+    text-decoration: none;
+    width: auto;
   }
 
-  .cv-button:hover {
+  footer .cv-button:hover {
     background: #d4c46a;
+    border: 1px solid #b5b5b5;
+  }
+
+  footer .lang-button {
+    width: 32px;
+    color: #777777;
+    background: transparent;
+    border: 1px solid #eee;
+    padding: 0;
+    font-size: 0.6rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  footer .lang-button:hover {
+    background: #eaeaea;
+    border: 1px solid #b5b5b5;
+  }
+
+  .cv-button-text {
+    white-space: nowrap;
   }
 
   @media (width <= 700px) {
@@ -229,3 +245,32 @@ const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
     }
   }
 </style>
+
+<script>
+  const langToggle = document.getElementById('lang-toggle');
+  const langText = document.getElementById('lang-text');
+  const html = document.documentElement;
+
+  // Initialize language from localStorage or default to 'en'
+  let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+  function updateLangDisplay() {
+    langText.textContent = currentLang === 'en' ? 'EN/ES' : 'ES/EN';
+    html.lang = currentLang === 'en' ? 'en' : 'es';
+  }
+
+  // On load, set the correct language
+  updateLangDisplay();
+
+  // Toggle language
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    localStorage.setItem('portfolio-lang', currentLang);
+    updateLangDisplay();
+    
+    // Reload page with new language (for full i18n, this would load different content)
+    // For now, we just update the UI. A full implementation would require
+    // either client-side content swapping or separate language routes.
+    window.location.reload();
+  });
+</script>
