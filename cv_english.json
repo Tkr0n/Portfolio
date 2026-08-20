@@ -1,74 +1,101 @@
 {
   "basics": {
     "name": "Saydenier Palacios",
-    "label": "Full Stack Developer with 3+ years of experience",
+    "label": "Software Developer",
     "image": "./me.webp",
     "email": "saydenier@gmail.com",
-    "phone": "+58 4125554988",
+    "phone": "+58 412-5554988 | +58 414-2606494",
     "url": "https://tkr0n.github.io/Portfolio/",
-    "summary": "Years of experience as a fullstack developer, participating in all stages of analysis, development, testing, publishing and maintenance of technological solutions. Excellent management of the Consultant - Client relationship. Leadership capacity and good communication skills with the rest of the team.",
+    "summary": "Software Developer with experience in consulting, full-stack development, ETL, Python, .NET, and Azure. Skilled in delivering cloud-based, data-driven solutions, including BI, Big Data, and advanced analytics projects. Experienced in leading software projects and implementing Microsoft technologies.",
     "location": {
-      "address": "Castillejo",
-      "postalCode": "1221",
-      "city": "Guatire",
+      "address": "",
+      "postalCode": "",
+      "city": "",
       "countryCode": "VE",
-      "region": "Venezuela"
+      "region": "Miranda, Venezuela"
     },
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "saydenier",
-        "url": "https://linkedin.com/in/saydenier"
+        "username": "Saydenier",
+        "url": "https://linkedin.com/in/Saydenier"
       },
       {
         "network": "GitHub",
-        "username": "midudev",
+        "username": "Tkr0n",
         "url": "https://github.com/Tkr0n"
       }
     ]
   },
   "work": [
     {
-      "name": "Sotec",
-      "position": "Fullstack developer",
-      "url": "https://sotec.es/",
-      "startDate": "2024-07-24",
+      "name": "Clarika Group",
+      "position": "Semi Senior Developer",
+      "url": "",
+      "startDate": "2025-06-01",
       "endDate": null,
-      "summary": "Currently working on eManage, their intern ERP system, brinding support to old modules and developing new ones with newer technologies",
-      "highlights": null
-    },
-    {
-      "name": "Vecoresystems",
-      "position": "Semi senior fullstack developer",
-      "url": "https://vecoresys.com/",
-      "startDate": "2020-09-01",
-      "endDate": "2024-06-01",
-      "summary": "I developed different modules for ecommerce application. Developed web services for consumption by the ecommerce application, making use of best practices as well as a clean architecture and different design patterns. Integration with third party services such as FedEx. Review of solutions developed by new team members.",
+      "summary": "Developed and optimized AI agentic applications, focusing on integrating agentic tools and flows within both core systems and internal tools. Reduced query processing time for fetching roles and permissions in cross-platform processes from 5 minutes to 15 seconds through advanced query optimization. Collaborated closely with cross-functional teams to design and implement agentic workflows, enhancing automation and system efficiency.",
       "highlights": [
-        "Team key member"
+        "AI agentic applications",
+        "Query optimization (5min → 15sec)",
+        "Cross-functional collaboration"
       ]
     },
     {
-      "name": "ASPTG Consulting",
-      "position": "Fullstack Developer Consultor",
+      "name": "ASP Consulting",
+      "position": "Software Consulting / Technical Leader",
       "url": "https://www.asptg.com/",
-      "startDate": "2020-10-01",
-      "endDate": "2023-11-01",
-      "summary": "I took the technical leadership for the development of a new product. I was the technical leader of a development team. I optimized different queries in SQL DB. Developed an educational newsletter generation process. Optimization of a background process for loading notes in which I managed to improve response times by more than 50%. I developed innovative applications with the latest technologies.",
+      "startDate": "2020-11-01",
+      "endDate": "2024-05-31",
+      "summary": "Led the adoption of AI agentic development strategies, introducing advanced tooling and methodologies to enhance team productivity and solution capabilities. Served as technical lead for multiple projects, architecting and delivering cross-platform mobile applications using React Native, Expo, and Obytes. Engineered data-driven solutions leveraging Microsoft technologies such as .NET, Azure App Services, Azure SQL, Cosmos DB, and Blob Storage, ensuring secure and scalable cloud deployments. Optimized database performance through advanced query tuning, stored procedure enhancements, and ETL processes using SSIS and SQL Server, while developing interactive BI reports with SSRS. Oversaw deployment pipelines and project management workflows with Azure Pipelines and Azure Boards, supporting robust software delivery and team collaboration.",
       "highlights": [
-        "Tech Lead",
-        "Process optimization",
-        "Use of new technologies"
+        "AI agentic development strategies",
+        "Technical Lead",
+        "React Native / Expo / Obytes",
+        "Azure cloud solutions",
+        "SSIS / SSRS / ETL",
+        "Azure Pipelines / Azure Boards"
       ]
     },
     {
-      "name": "Baneso, Banco Universal",
-      "position": "Senior .NET Consultor",
+      "name": "Newry Global",
+      "position": "Senior Fullstack Developer",
+      "url": "",
+      "startDate": "2020-11-01",
+      "endDate": null,
+      "summary": "Collaborated across teams to design and implement ETL pipelines using Python, Pandas, Flask, MongoDB, and PostgreSQL, adapting to diverse technology stacks and workflows. Developed and maintained APIs in .NET Framework for file uploads to Google Drive, and in .NET Core utilizing hexagonal architecture, repository pattern, SQL Server, and MySQL. Integrated GCP services including SSO, Google Drive API, Buckets, BigQuery, and LookerStudio to enhance data accessibility and reporting. Expanded and maintained ERP functionalities in ASP.NET (Framework 3.5), ensuring robust and scalable business solutions. Containerized applications with Docker to streamline deployment and improve cross-environment consistency.",
+      "highlights": [
+        "ETL pipelines (Python, Pandas, Flask)",
+        "Hexagonal architecture / Repository pattern",
+        "GCP integration (BigQuery, LookerStudio)",
+        "Docker containerization"
+      ]
+    },
+    {
+      "name": "Banesco",
+      "position": "Senior Fullstack Consultant",
       "url": "https://www.banesco.com/",
       "startDate": "2023-10-01",
-      "endDate": "2024-04-31",
-      "summary": "Analysis and documentation of legacy code. Developed new internal encryption libraries using the AES Algorithm (256). Analysis and design of new Restfull API's for the migration of processes previously contained in web services (ASMX).",
-      "highlights": null
+      "endDate": "2024-05-31",
+      "summary": "Analysis of software solutions of the entire banking infrastructure of the organization. Design of solutions (APIs) for systems migration.",
+      "highlights": [
+        "Banking infrastructure analysis",
+        "API design for migration"
+      ]
+    },
+    {
+      "name": "VeCore Systems",
+      "position": "Fullstack Developer",
+      "url": "https://vecoresys.com/",
+      "startDate": "2020-11-01",
+      "endDate": "2024-05-31",
+      "summary": "APIs development in .Net and .Net Framework. Angular v13 onwards (eCommerce Project). Design of integral solutions. Supervision of new team members (juniors). Azure (DevOps, CosmoDb, AppServices). Third party APIs integration (Fedex, AutoForce, Google Maps).",
+      "highlights": [
+        "Team key member",
+        "Angular v13+",
+        "Azure DevOps",
+        "Third-party API integration"
+      ]
     }
   ],
   "volunteer": [{
@@ -81,23 +108,23 @@
     "highlights": null
   }],
   "education": [{
-      "institution": "U.E. Doña Benilde",
-      "url": null,
-      "area": "Highschool",
-      "studyType": "Highschool",
-      "startDate": "2010-01-07",
-      "endDate": "2015-06-15",
-      "score": null,
+      "institution": "IUTECP",
+      "url": "",
+      "area": "Computer Science",
+      "studyType": "TSU (Unfinished)",
+      "startDate": "2016-01-01",
+      "endDate": "2019-12-31",
+      "score": "",
       "courses": null
     },
     {
-      "institution": "Instituto Tecnológico Elías Calixto Pompa",
-      "url": null,
-      "area": "Computer Science (Not completed)",
-      "studyType": "Administración de sistemas informáticos",
-      "startDate": "2017-01-07",
-      "endDate": "2019-06-15",
-      "score": null,
+      "institution": "U.E. Doña Benilde",
+      "url": "",
+      "area": "Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2010-01-01",
+      "endDate": "2015-12-31",
+      "score": "",
       "courses": null
     }
   ],
@@ -106,109 +133,149 @@
   "publications": [],
   "skills": [
     {
-      "name": "HTML",
+      "name": ".NET Framework",
       "level": "Master",
-      "keywords": [
-        "Web Development", "Frontend"
-      ]
+      "keywords": ["Web Development", "Backend", "API"]
     },
     {
-      "name": "CSS",
-      "level": "Advanced",
-      "keywords": [
-        "Web Development", "Frontend", "Responsive design"
-      ]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Advanced",
-      "keywords": [
-        "Web Development", "Frontend", "Backend", "Fullstack"
-      ]
-    },
-    {
-      "name": "Tailwind",
-      "level": "Mid",
-      "keywords": [
-        "Web Development", "Frontend", "CSS Framework", "Responsive design"
-      ]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Advanced",
-      "keywords": [
-        "Web Development", "Frontend", "Backend", "JavaScript Superset"
-      ]
-    },
-    {
-      "name": "Node",
-      "level": "Beginner",
-      "keywords": [
-        "Web Development", "Backend", "JavaScript", "Server"
-      ]
-    },
-    {
-      "name": "MySQL",
-      "level": "Mid",
-      "keywords": [
-        "Data Bases", "SQL", "Data Storage", "Backend"
-      ]
-    },
-    {
-      "name": "SQL Server",
+      "name": ".NET Core",
       "level": "Master",
-      "keywords": [
-        "Data Bases", "SQL", "Data Storage", "Backend"
-      ]
+      "keywords": ["Web Development", "Backend", "API", "Hexagonal Architecture"]
     },
     {
-      "name": "Git",
-      "level": "Mid",
-      "keywords": [
-        "Version Control", "Collaboration", "Source Code"
-      ]
+      "name": "ASP.NET",
+      "level": "Master",
+      "keywords": ["Web Development", "Backend", "ERP"]
     },
     {
-      "name": "GitHub",
-      "level": "Mid",
-      "keywords": [
-        "Version Control", "Collaboration", "Source Code", "Git"
-      ]
+      "name": "Azure",
+      "level": "Advanced",
+      "keywords": ["Cloud", "App Services", "Azure SQL", "Cosmos DB", "Blob Storage", "DevOps", "Pipelines", "Boards"]
     },
     {
       "name": "Csharp",
       "level": "Master",
-      "keywords": [
-        "Web Development", "Backend", "API", "Design Patterns", "Software Architecture"
-      ]
+      "keywords": ["Backend", "API", "Design Patterns", "Software Architecture"]
     },
     {
-      "name": "Net",
+      "name": "SQL Server",
       "level": "Master",
-      "keywords": [
-        "Web Development", "Backend", ".Net Framework", ".NET Core", "ASP"
-      ]
+      "keywords": ["Databases", "SQL", "SSIS", "SSRS", "ETL", "Stored Procedures"]
     },
     {
-      "name": "React",
-      "level": "Beginner",
-      "keywords": [
-        "Web Development", "Frontend", "JavaScript Library", "UI"
-      ]
+      "name": "Cosmos DB",
+      "level": "Advanced",
+      "keywords": ["NoSQL", "Cloud", "Azure"]
+    },
+    {
+      "name": "MySQL",
+      "level": "Advanced",
+      "keywords": ["Databases", "SQL", "Backend"]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Advanced",
+      "keywords": ["Databases", "SQL", "ETL", "Backend"]
+    },
+    {
+      "name": "Redis",
+      "level": "Intermediate",
+      "keywords": ["Caching", "Databases", "Performance"]
+    },
+    {
+      "name": "DynamoDB",
+      "level": "Intermediate",
+      "keywords": ["NoSQL", "AWS", "Databases"]
+    },
+    {
+      "name": "MongoDB",
+      "level": "Intermediate",
+      "keywords": ["NoSQL", "Databases", "ETL"]
+    },
+    {
+      "name": "AWS",
+      "level": "Intermediate",
+      "keywords": ["Cloud", "EC2", "S3", "Lambda"]
+    },
+    {
+      "name": "Python",
+      "level": "Advanced",
+      "keywords": ["ETL", "Pandas", "Flask", "Backend", "Data"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Backend"]
+    },
+    {
+      "name": "PHP",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Backend"]
     },
     {
       "name": "Angular",
-      "level": "Mid",
-      "keywords": [
-        "Web Development", "Frontend", "JavaScript Library", "UI"
-      ]
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "v13+"]
+    },
+    {
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "UI"]
+    },
+    {
+      "name": "React Native",
+      "level": "Intermediate",
+      "keywords": ["Mobile", "Cross-platform", "Expo", "Obytes"]
+    },
+    {
+      "name": "Blazor",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", ".NET"]
     },
     {
       "name": "Astro",
-      "level": "Mid",
-      "keywords": [
-        "Web Development", "Frontend", "HTML Framework"
-      ]
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Static Site"]
+    },
+    {
+      "name": "Docker",
+      "level": "Intermediate",
+      "keywords": ["Containerization", "Deployment", "DevOps"]
+    },
+    {
+      "name": "Kubernetes",
+      "level": "Intermediate",
+      "keywords": ["Orchestration", "RKE2", "DevOps"]
+    },
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": ["Web Development", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Tailwind", "Responsive Design"]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
+    },
+    {
+      "name": "WAF",
+      "level": "Intermediate",
+      "keywords": ["Security", "Cloud", "Azure"]
+    },
+    {
+      "name": "Front Door",
+      "level": "Intermediate",
+      "keywords": ["Azure", "CDN", "Load Balancing"]
     }
   ],
   "languages": [
@@ -222,16 +289,10 @@
     }
   ],
   "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
+    "name": "Technology and Innovation",
+    "keywords": ["AI", "Cloud Computing", "Software Architecture"]
   }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
+  "references": [],
   "projects": [
     {
       "name": "That New tire",
@@ -280,7 +341,7 @@
     {
       "name": "Challenges",
       "isActive": true,
-      "description": "List of challenges maded for selection processes",
+      "description": "List of challenges made for selection processes",
       "highlights": [
         "In development",
         "All repos with challenge suffix"
