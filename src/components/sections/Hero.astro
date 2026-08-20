@@ -22,6 +22,8 @@ const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+const cvEnglish = "/cv/Saydenier Palacios ENG.pdf"
+const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
 ---
 
 <Section>
@@ -76,7 +78,32 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
               </a>
             )
           })
+}
         }
+        <div class="cv-buttons">
+          {cvEnglish && (
+            <a
+              href={cvEnglish}
+              title="Descargar currículum en inglés"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cv-button"
+            >
+              <span>Descargar CV (EN)</span>
+            </a>
+          )}
+          {cvSpanish && (
+            <a
+              href={cvSpanish}
+              title="Descargar currículum en español"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cv-button"
+            >
+              <span>Descargar CV (ES)</span>
+            </a>
+          )}
+        </div>
       </footer>
     </div>
     <figure>
@@ -153,6 +180,25 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   footer a:hover {
     background: #eaeaea;
     border: 1px solid #b5b5b5;
+  }
+
+  .cv-button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background: #efd874;
+    color: #111;
+    font-weight: 500;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cv-button span {
+    margin-right: 0.5rem;
+  }
+
+  .cv-button:hover {
+    background: #d4c46a;
   }
 
   @media (width <= 700px) {
