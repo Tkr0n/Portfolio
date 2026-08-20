@@ -16,6 +16,10 @@ const { name, label } = cvEn
 
 <Layout title={`${name} Portfolio - ${label}`}>
   <main id="main-content">
+  <script is:inline>
+    window.__CV_EN__ = JSON.parse(`{JSON.stringify(cvEn).replace(/"/g, '\\"')}`);
+    window.__CV_ES__ = JSON.parse(`{JSON.stringify(cvEs).replace(/"/g, '\\"')}`);
+  </script>
     <Hero set:html={cvEn.basics} />
     <About set:html={cvEn.basics} />
     <Experience set:html={cvEn.work} />
@@ -28,16 +32,15 @@ const { name, label } = cvEn
 </Layout>
 
 <script is:inline>
-  // Load both CV data
+  // Both CV data objects are injected by Astro at build time
   const cvData = {
-    en: JSON.parse(`{JSON.stringify(cvEn).replace(/"/g, '\\"')}`),
-    es: JSON.parse(`{JSON.stringify(cvEs).replace(/"/g, '\\"')}`)
+    en: window.__CV_EN__,
+    es: window.__CV_ES__
   };
 
   let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
   function updateLangDisplay() {
-    const langToggle = document.getElementById('lang-toggle');
     const langText = document.getElementById('lang-text');
     if (langText) {
       langText.textContent = currentLang === 'en' ? 'ES' : 'EN';
