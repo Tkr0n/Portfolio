@@ -78,33 +78,32 @@ const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
               </a>
             )
           })
-}
         }
-        <div class="cv-buttons">
-          {cvEnglish && (
-            <a
-              href={cvEnglish}
-              title="Descargar currículum en inglés"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cv-button"
-            >
-              <span>Descargar CV (EN)</span>
-            </a>
-          )}
-          {cvSpanish && (
-            <a
-              href={cvSpanish}
-              title="Descargar currículum en español"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cv-button"
-            >
-              <span>Descargar CV (ES)</span>
-            </a>
-          )}
-        </div>
       </footer>
+      <div class="cv-buttons">
+        {cvEnglish && (
+          <a
+            href={cvEnglish}
+            title="Descargar currículum en inglés"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cv-button"
+          >
+            <span>Descargar CV (EN)</span>
+          </a>
+        )}
+        {cvSpanish && (
+          <a
+            href={cvSpanish}
+            title="Descargar currículum en español"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cv-button"
+          >
+            <span>Descargar CV (ES)</span>
+          </a>
+        )}
+      </div>
     </div>
     <figure>
       <img src={image} alt={name} />
@@ -191,6 +190,8 @@ const cvSpanish = "/cv/Saydenier Palacios ESP.pdf"
     border-radius: 4px;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
   }
 
   .cv-button span {
