@@ -7,7 +7,6 @@ import Experience from "@/components/sections/Experience.astro"
 import Hero from "@/components/sections/Hero.astro"
 import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
-import KeyboardManager from "@/components/KeyboardManager.astro"
 
 import { basics } from "@cv"
 const { name, label } = basics
@@ -22,56 +21,25 @@ const { name, label } = basics
     <Projects set:html={basics} />
     <Skills set:html={basics} />
   </main>
-
-  <!-- <KeyboardManager /> -->
 </Layout>
 
 <script is:inline>
   var cvData = { en: null, es: null };
 
-  // Section titles and UI text for each language
   var uiText = {
-    en: {
-      about: "About me",
-      experience: "Experience",
-      education: "Education",
-      projects: "Projects",
-      skills: "Skills",
-      view: "View",
-      code: "View source code",
-      project: "project",
-      today: "Today",
-      actual: "Actual",
-      locationPrefix: "",
-      locationSuffix: ""
-    },
-    es: {
-      about: "Sobre mí",
-      experience: "Experiencia",
-      education: "Educación",
-      projects: "Proyectos",
-      skills: "Habilidades",
-      view: "Ver",
-      code: "Ver código fuente",
-      project: "proyecto",
-      today: "Hoy",
-      actual: "Actual",
-      locationPrefix: "",
-      locationSuffix: ""
-    }
+    en: { about: "About me", experience: "Experience", education: "Education", projects: "Projects", skills: "Skills", today: "Today", actual: "Actual" },
+    es: { about: "Sobre mí", experience: "Experiencia", education: "Educación", projects: "Proyectos", skills: "Habilidades", today: "Hoy", actual: "Actual" }
   };
 
+  var globeSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg> ';
+
   async function loadCVData() {
-    try {
-      var enRes = await fetch('/Portfolio/cv-en.json');
-      var esRes = await fetch('/Portfolio/cv-es.json');
-      cvData.en = await enRes.json();
-      cvData.es = await esRes.json();
-      updateLangDisplay();
-      updateContent();
-    } catch (err) {
-      console.error('Failed to load CV data:', err);
-    }
+    var enRes = await fetch('/Portfolio/cv-en.json');
+    var esRes = await fetch('/Portfolio/cv-es.json');
+    cvData.en = await enRes.json();
+    cvData.es = await esRes.json();
+    updateLangDisplay();
+    updateContent();
   }
 
   var currentLang = localStorage.getItem('portfolio-lang') || 'en';
@@ -87,7 +55,6 @@ const { name, label } = basics
     var ui = uiText[currentLang];
     if (!cv) return;
 
-    // Update section titles
     var aboutTitle = document.querySelector('#about h2');
     if (aboutTitle) aboutTitle.textContent = ui.about;
     var expTitle = document.querySelector('#experience h2');
@@ -99,7 +66,6 @@ const { name, label } = basics
     var skillsTitle = document.querySelector('#skills h2');
     if (skillsTitle) skillsTitle.textContent = ui.skills;
 
-    // Update Hero
     var heroName = document.querySelector('.info h1');
     var heroLabel = document.querySelector('.info h2');
     var heroLocation = document.querySelector('.info span');
@@ -112,23 +78,20 @@ const { name, label } = basics
       if (city) parts.push(city);
       if (region) parts.push(region);
       if (parts.length > 0) {
-        heroLocation.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#world-map"></use></svg> ' + parts.join(', ');
+        heroLocation.innerHTML = globeSVG + parts.join(', ');
       }
     }
 
-    // Update About
     var aboutP = document.querySelector('#about p');
     if (aboutP) aboutP.textContent = cv.basics.summary;
 
-    // Update Experience
     var expSection = document.querySelector('#experience ul');
     if (expSection && cv.work) {
       expSection.innerHTML = cv.work.map(function(w) {
-        return '<li><article><header><div><h3>' + (w.url ? '<a href="' + w.url + '" title="' + ui.view + ' ' + w.name + '" target="_blank">' + w.name + '</a>' : w.name) + '</h3><h4>' + w.position + '</h4></div><div style="color: #efd874;"><time datetime="' + w.startDate + '" data-title="' + w.startDate + '">' + new Date(w.startDate).getFullYear() + '</time> - <time datetime="' + (w.endDate || 'present') + '" data-title="' + (w.endDate || 'present') + '">' + (w.endDate ? new Date(w.endDate).getFullYear() : ui.today) + '</time></div></header><footer><p>' + w.summary + '</p></footer></article></li>';
+        return '<li><article><header><div><h3>' + (w.url ? '<a href="' + w.url + '" target="_blank">' + w.name + '</a>' : w.name) + '</h3><h4>' + w.position + '</h4></div><div style="color: #efd874;"><time datetime="' + w.startDate + '" data-title="' + w.startDate + '">' + new Date(w.startDate).getFullYear() + '</time> - <time datetime="' + (w.endDate || 'present') + '" data-title="' + (w.endDate || 'present') + '">' + (w.endDate ? new Date(w.endDate).getFullYear() : ui.today) + '</time></div></header><footer><p>' + w.summary + '</p></footer></article></li>';
       }).join('');
     }
 
-    // Update Education
     var eduSection = document.querySelector('#education ul');
     if (eduSection && cv.education) {
       eduSection.innerHTML = cv.education.map(function(e) {
@@ -136,15 +99,13 @@ const { name, label } = basics
       }).join('');
     }
 
-    // Update Projects
     var projSection = document.querySelector('#projects ul');
     if (projSection && cv.projects) {
       projSection.innerHTML = cv.projects.map(function(p) {
-        return '<li><article><header><h3><a href="' + p.url + '" target="_blank" title="' + ui.view + ' el ' + ui.project + ' ' + p.name + '">' + p.name + '</a>' + (p.isActive ? '<span>•</span>' : '') + (p.github ? '<a class="github-code-link" href="' + p.github + '" target="_blank" title="' + ui.code + ' del ' + ui.project + ' ' + p.name + '"><svg class="icon" aria-hidden="true"><use href="#github"></use></svg></a>' : '') + '</h3><p>' + p.description + '</p></header><footer>' + (p.highlights ? p.highlights.map(function(h) { return '<span>' + h + '</span>'; }).join('') : '') + '</footer></article></li>';
+        return '<li><article><header><h3><a href="' + p.url + '" target="_blank">' + p.name + '</a>' + (p.isActive ? '<span>•</span>' : '') + (p.github ? '<a class="github-code-link" href="' + p.github + '" target="_blank"><svg class="icon" aria-hidden="true"><use href="#github"></use></svg></a>' : '') + '</h3><p>' + p.description + '</p></header><footer>' + (p.highlights ? p.highlights.map(function(h) { return '<span>' + h + '</span>'; }).join('') : '') + '</footer></article></li>';
       }).join('');
     }
 
-    // Update Skills
     var skillsSection = document.querySelector('#skills ul');
     if (skillsSection && cv.skills) {
       skillsSection.innerHTML = cv.skills.map(function(s) {
@@ -152,7 +113,6 @@ const { name, label } = basics
       }).join('');
     }
 
-    // Update CV button href
     var cvBtn = document.querySelector('.cv-button');
     if (cvBtn) cvBtn.href = currentLang === 'en' ? '/Portfolio/cv/Saydenier-Palacios-ENG.pdf' : '/Portfolio/cv/Saydenier-Palacios-ESP.pdf';
   }
