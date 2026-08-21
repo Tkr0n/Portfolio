@@ -7,152 +7,119 @@ import Experience from "@/components/sections/Experience.astro"
 import Hero from "@/components/sections/Hero.astro"
 import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
-import KeyboardManager from "@/components/KeyboardManager.astro"
 
-import cvEn from "@cv"
-import cvEs from "../cv.json"
-const { name, label } = cvEn
+import { basics } from "@cv"
+const { name, label } = basics
 ---
 
-<Layout title={`${name} Portfolio - ${label}`}>
+<Layout title={name + " Portfolio - " + label}>
   <main id="main-content">
-  <script is:inline>
-    window.__CV_EN__ = JSON.parse(`{JSON.stringify(cvEn).replace(/"/g, '\\"')}`);
-    window.__CV_ES__ = JSON.parse(`{JSON.stringify(cvEs).replace(/"/g, '\\"')}`);
-  </script>
-    <Hero set:html={cvEn.basics} />
-    <About set:html={cvEn.basics} />
-    <Experience set:html={cvEn.work} />
-    <Education set:html={cvEn.education} />
-    <Projects set:html={cvEn.projects} />
-    <Skills set:html={cvEn.skills} />
+    <Hero set:html={basics} />
+    <About set:html={basics} />
+    <Experience set:html={basics} />
+    <Education set:html={basics} />
+    <Projects set:html={basics} />
+    <Skills set:html={basics} />
   </main>
-
-  <!-- <KeyboardManager /> -->
 </Layout>
 
 <script is:inline>
-  // Both CV data objects are injected by Astro at build time
-  const cvData = {
-    en: window.__CV_EN__,
-    es: window.__CV_ES__
+  var cvData = { en: null, es: null };
+
+  var uiText = {
+    en: { about: "About me", experience: "Experience", education: "Education", projects: "Projects", skills: "Skills", today: "Today", actual: "Actual" },
+    es: { about: "Sobre mí", experience: "Experiencia", education: "Educación", projects: "Proyectos", skills: "Habilidades", today: "Hoy", actual: "Actual" }
   };
 
-  let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+  async function loadCVData() {
+    var enRes = await fetch('/Portfolio/cv-en.json');
+    var esRes = await fetch('/Portfolio/cv-es.json');
+    cvData.en = await enRes.json();
+    cvData.es = await esRes.json();
+    updateLangDisplay();
+    updateContent();
+  }
+
+  var currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
   function updateLangDisplay() {
-    const langText = document.getElementById('lang-text');
-    if (langText) {
-      langText.textContent = currentLang === 'en' ? 'ES' : 'EN';
-    }
+    var langText = document.getElementById('lang-text');
+    if (langText) langText.textContent = currentLang === 'en' ? 'ES' : 'EN';
     document.documentElement.lang = currentLang === 'en' ? 'en' : 'es';
   }
 
   function updateContent() {
-    const cv = cvData[currentLang];
-    
-    // Update Hero
-    const heroName = document.querySelector('.info h1');
-    const heroLabel = document.querySelector('.info h2');
-    const heroLocation = document.querySelector('.info span');
+    var cv = cvData[currentLang];
+    var ui = uiText[currentLang];
+    if (!cv) return;
+
+    var aboutTitle = document.querySelector('#about h2');
+    if (aboutTitle) aboutTitle.textContent = ui.about;
+    var expTitle = document.querySelector('#experience h2');
+    if (expTitle) expTitle.textContent = ui.experience;
+    var eduTitle = document.querySelector('#education h2');
+    if (eduTitle) eduTitle.textContent = ui.education;
+    var projTitle = document.querySelector('#projects h2');
+    if (projTitle) projTitle.textContent = ui.projects;
+    var skillsTitle = document.querySelector('#skills h2');
+    if (skillsTitle) skillsTitle.textContent = ui.skills;
+
+    var heroName = document.querySelector('.info h1');
+    var heroLabel = document.querySelector('.info h2');
+    var heroLocation = document.querySelector('.info span');
     if (heroName) heroName.textContent = cv.basics.name;
     if (heroLabel) heroLabel.textContent = cv.basics.label;
     if (heroLocation && cv.basics.location) {
-      const { city, region } = cv.basics.location;
-      if (city || region) {
-        heroLocation.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#world-map"></use></svg> ${city}, ${region}`;
+      var city = cv.basics.location.city || '';
+      var region = cv.basics.location.region || '';
+      var parts = [];
+      if (city) parts.push(city);
+      if (region) parts.push(region);
+      if (parts.length > 0) {
+        heroLocation.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#world-map"></use></svg> ' + parts.join(', ');
       }
     }
 
-    // Update About
-    const aboutP = document.querySelector('#about p');
+    var aboutP = document.querySelector('#about p');
     if (aboutP) aboutP.textContent = cv.basics.summary;
 
-    // Update Experience
-    const expSection = document.querySelector('#experience ul');
+    var expSection = document.querySelector('#experience ul');
     if (expSection && cv.work) {
-      expSection.innerHTML = cv.work.map(w => `
-        <li>
-          <article>
-            <header>
-              <div>
-                <h3>${w.url ? `<a href="${w.url}" title="Ver ${w.name}" target="_blank">${w.name}</a>` : w.name}</h3>
-                <h4>${w.position}</h4>
-              </div>
-              <div style="color: #efd874;">
-                <time datetime="${w.startDate}" data-title="${w.startDate}">${new Date(w.startDate).getFullYear()}</time>
-                {" - "}
-                <time datetime="${w.endDate || 'present'}" data-title="${w.endDate || 'present'}">${w.endDate ? new Date(w.endDate).getFullYear() : 'Today'}</time>
-              </div>
-            </header>
-            <footer><p>${w.summary}</p></footer>
-          </article>
-        </li>
-      `).join('');
+      expSection.innerHTML = cv.work.map(function(w) {
+        return '<li><article><header><div><h3>' + (w.url ? '<a href="' + w.url + '" target="_blank">' + w.name + '</a>' : w.name) + '</h3><h4>' + w.position + '</h4></div><div style="color: #efd874;"><time datetime="' + w.startDate + '" data-title="' + w.startDate + '">' + new Date(w.startDate).getFullYear() + '</time> - <time datetime="' + (w.endDate || 'present') + '" data-title="' + (w.endDate || 'present') + '">' + (w.endDate ? new Date(w.endDate).getFullYear() : ui.today) + '</time></div></header><footer><p>' + w.summary + '</p></footer></article></li>';
+      }).join('');
     }
 
-    // Update Education
-    const eduSection = document.querySelector('#education ul');
+    var eduSection = document.querySelector('#education ul');
     if (eduSection && cv.education) {
-      eduSection.innerHTML = cv.education.map(e => `
-        <li>
-          <article>
-            <header>
-              <div><h3>${e.institution}</h3></div>
-              <time>${new Date(e.startDate).getFullYear()} - ${e.endDate ? new Date(e.endDate).getFullYear() : 'Actual'}</time>
-            </header>
-            <footer><p>${e.area}</p></footer>
-          </article>
-        </li>
-      `).join('');
+      eduSection.innerHTML = cv.education.map(function(e) {
+        return '<li><article><header><div><h3>' + e.institution + '</h3></div><time>' + new Date(e.startDate).getFullYear() + ' - ' + (e.endDate ? new Date(e.endDate).getFullYear() : ui.actual) + '</time></header><footer><p>' + e.area + '</p></footer></article></li>';
+      }).join('');
     }
 
-    // Update Projects
-    const projSection = document.querySelector('#projects ul');
+    var projSection = document.querySelector('#projects ul');
     if (projSection && cv.projects) {
-      projSection.innerHTML = cv.projects.map(p => `
-        <li>
-          <article>
-            <header>
-              <h3>
-                <a href="${p.url}" target="_blank" title="Ver el proyecto ${p.name}">${p.name}</a>
-                ${p.isActive ? '<span>•</span>' : ''}
-                ${p.github ? `<a class="github-code-link" href="${p.github}" target="_blank" title="Ver código fuente del proyecto ${p.name}"><svg class="icon" aria-hidden="true"><use href="#github"></use></svg></a>` : ''}
-              </h3>
-              <p>${p.description}</p>
-            </header>
-            <footer>${p.highlights?.map(h => `<span>${h}</span>`).join('') || ''}</footer>
-          </article>
-        </li>
-      `).join('');
+      projSection.innerHTML = cv.projects.map(function(p) {
+        return '<li><article><header><h3><a href="' + p.url + '" target="_blank">' + p.name + '</a>' + (p.isActive ? '<span>•</span>' : '') + (p.github ? '<a class="github-code-link" href="' + p.github + '" target="_blank"><svg class="icon" aria-hidden="true"><use href="#github"></use></svg></a>' : '') + '</h3><p>' + p.description + '</p></header><footer>' + (p.highlights ? p.highlights.map(function(h) { return '<span>' + h + '</span>'; }).join('') : '') + '</footer></article></li>';
+      }).join('');
     }
 
-    // Update Skills
-    const skillsSection = document.querySelector('#skills ul');
+    var skillsSection = document.querySelector('#skills ul');
     if (skillsSection && cv.skills) {
-      skillsSection.innerHTML = cv.skills.map(s => `
-        <li>
-          <span class="skill-name">${s.name}</span>
-          <span class="skill-level">${s.level}</span>
-        </li>
-      `).join('');
+      skillsSection.innerHTML = cv.skills.map(function(s) {
+        return '<li><span class="skill-name">' + s.name + '</span><span class="skill-level">' + s.level + '</span></li>';
+      }).join('');
     }
 
-    // Update CV button href
-    const cvBtn = document.querySelector('.cv-button');
-    if (cvBtn) {
-      cvBtn.href = currentLang === 'en' ? '/Portfolio/cv/Saydenier-Palacios-ENG.pdf' : '/Portfolio/cv/Saydenier-Palacios-ESP.pdf';
-    }
+    var cvBtn = document.querySelector('.cv-button');
+    if (cvBtn) cvBtn.href = currentLang === 'en' ? '/Portfolio/cv/Saydenier-Palacios-ENG.pdf' : '/Portfolio/cv/Saydenier-Palacios-ESP.pdf';
   }
 
-  // Initialize
-  updateLangDisplay();
-  updateContent();
+  loadCVData();
 
-  // Toggle language
-  const langToggle = document.getElementById('lang-toggle');
+  var langToggle = document.getElementById('lang-toggle');
   if (langToggle) {
-    langToggle.addEventListener('click', () => {
+    langToggle.addEventListener('click', function() {
       currentLang = currentLang === 'en' ? 'es' : 'en';
       localStorage.setItem('portfolio-lang', currentLang);
       updateLangDisplay();

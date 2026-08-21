@@ -246,30 +246,3 @@ const cvUrl = "/Portfolio/cv/Saydenier-Palacios-ENG.pdf"
   }
 </style>
 
-<script>
-  const langToggle = document.getElementById('lang-toggle');
-  const langText = document.getElementById('lang-text');
-  const html = document.documentElement;
-
-  // Initialize language from localStorage or default to 'en'
-  let currentLang = localStorage.getItem('portfolio-lang') || 'en';
-
-  function updateLangDisplay() {
-    // Show TARGET language (what user will switch TO)
-    langText.textContent = currentLang === 'en' ? 'ES' : 'EN';
-    html.lang = currentLang === 'en' ? 'en' : 'es';
-  }
-
-  // On load, set the correct language
-  updateLangDisplay();
-
-  // Toggle language
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'es' : 'en';
-    localStorage.setItem('portfolio-lang', currentLang);
-    updateLangDisplay();
-    
-    // Reload page with new language
-    window.location.reload();
-  });
-</script>
