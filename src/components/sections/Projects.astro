@@ -46,15 +46,15 @@ import { projects } from "@cv"
   </ul>
 </Section>
 
-<style>
-  ul {
+<style is:global>
+  #projects ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-inline: -16px;
   }
 
-  article {
+  #projects article {
     border-radius: 8px;
     border: 1px solid #efd874;
     gap: 16px;
@@ -64,29 +64,29 @@ import { projects } from "@cv"
     height: 100%;
   }
 
-  article header {
+  #projects article header {
     flex: 1;
   }
 
-  article h3 {
+  #projects article h3 {
     margin-bottom: 4px;
   }
 
-  article a {
+  #projects article a {
     color: #eaeaea;
   }
 
-  article a:hover {
+  #projects article a:hover {
     text-decoration: underline;
   }
 
-  article p {
+  #projects article p {
     font-size: 0.75rem;
     line-height: 1.2rem;
     margin-bottom: 4px;
   }
 
-  article h3 span {
+  #projects article h3 span {
     color: rgb(0, 188, 47);
     animation-name: flicker;
     animation-duration: 3s;
@@ -94,14 +94,14 @@ import { projects } from "@cv"
     animation-iteration-count: infinite;
   }
 
-  footer {
+  #projects footer {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
     font-size: 0.6rem;
   }
 
-  footer span {
+  #projects footer span {
     border-radius: 6px;
     border: solid 1px #eaeaea;
     color: #eaeaea;
@@ -110,7 +110,7 @@ import { projects } from "@cv"
     padding: 0.2rem 0.6rem;
   }
 
-  .github-code-link {
+  #projects .github-code-link {
     margin-left: 5px;
   }
 
@@ -127,11 +127,11 @@ import { projects } from "@cv"
   }
 
   @media (width <= 700px) {
-    ul {
+    #projects ul {
       margin-inline: 0px;
     }
 
-    article {
+    #projects article {
       border: none;
       box-shadow: 0 1px 1px #f2f2f2;
       padding: 0 0 16px 0;
@@ -139,7 +139,7 @@ import { projects } from "@cv"
   }
 
   @media print {
-    article h3 span {
+    #projects article h3 span {
       animation-name: none;
     }
   }

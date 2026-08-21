@@ -53,51 +53,51 @@ import { work } from "@cv"
   </ul>
 </Section>
 
-<style>
-  ul {
+<style is:global>
+  #experience ul {
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
 
-  article h3 {
+  #experience article h3 {
     font-weight: 500;
     color: #eaeaea;
   }
 
-  article a {
+  #experience article a {
     color: #eaeaea;
   }
 
-  article a:hover {
+  #experience article a:hover {
     text-decoration: underline;
   }
 
-  article h4 {
+  #experience article h4 {
     color: #efd874;
     font-weight: 400;
   }
 
-  header {
+  #experience header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 4px;
   }
 
-  time {
+  #experience time {
     font-size: 0.85rem;
     min-width: 102px;
     cursor: default;
   }
 
-  [data-title]:hover:after {
+  #experience [data-title]:hover:after {
     opacity: 1;
     transition: all 0.1s ease-in-out 0.5s;
     visibility: visible;
   }
 
-  [data-title]:after {
+  #experience [data-title]:after {
     content: attr(data-title);
     background-color: #333;
     color: #fff;
@@ -116,12 +116,12 @@ import { work } from "@cv"
     border-radius: 6px;
   }
 
-  [data-title] {
+  #experience [data-title] {
     position: relative;
   }
 
   @media (width <= 700px) {
-    time {
+    #experience time {
       text-align: right;
     }
   }
