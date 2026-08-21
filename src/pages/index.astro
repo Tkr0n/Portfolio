@@ -27,19 +27,42 @@ const { name, label } = basics
   var cvData = { en: null, es: null };
 
   var uiText = {
-    en: { about: "About me", experience: "Experience", education: "Education", projects: "Projects", skills: "Skills", today: "Today", actual: "Actual" },
-    es: { about: "Sobre mí", experience: "Experiencia", education: "Educación", projects: "Proyectos", skills: "Habilidades", today: "Hoy", actual: "Actual" }
+    en: {
+      about: "About me",
+      experience: "Experience",
+      education: "Education",
+      projects: "Projects",
+      skills: "Skills",
+      today: "Today",
+      actual: "Actual",
+      downloadCV: "Download CV"
+    },
+    es: {
+      about: "Sobre mí",
+      experience: "Experiencia",
+      education: "Educación",
+      projects: "Proyectos",
+      skills: "Habilidades",
+      today: "Hoy",
+      actual: "Actual",
+      downloadCV: "Descargar CV"
+    }
   };
 
   var globeSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg> ';
 
-  async function loadCVData() {
-    var enRes = await fetch('/Portfolio/cv-en.json');
-    var esRes = await fetch('/Portfolio/cv-es.json');
-    cvData.en = await enRes.json();
-    cvData.es = await esRes.json();
-    updateLangDisplay();
-    updateContent();
+  function loadCVData() {
+    return Promise.all([
+      fetch('/Portfolio/cv-en.json').then(function(r) { return r.json(); }),
+      fetch('/Portfolio/cv-es.json').then(function(r) { return r.json(); })
+    ]).then(function(data) {
+      cvData.en = data[0];
+      cvData.es = data[1];
+      updateLangDisplay();
+      updateContent();
+    }).catch(function(err) {
+      console.error('Failed to load CV data:', err);
+    });
   }
 
   var currentLang = localStorage.getItem('portfolio-lang') || 'en';
@@ -55,6 +78,7 @@ const { name, label } = basics
     var ui = uiText[currentLang];
     if (!cv) return;
 
+    // Update section titles
     var aboutTitle = document.querySelector('#about h2');
     if (aboutTitle) aboutTitle.textContent = ui.about;
     var expTitle = document.querySelector('#experience h2');
@@ -66,6 +90,7 @@ const { name, label } = basics
     var skillsTitle = document.querySelector('#skills h2');
     if (skillsTitle) skillsTitle.textContent = ui.skills;
 
+    // Update Hero
     var heroName = document.querySelector('.info h1');
     var heroLabel = document.querySelector('.info h2');
     var heroLocation = document.querySelector('.info span');
@@ -82,9 +107,11 @@ const { name, label } = basics
       }
     }
 
+    // Update About
     var aboutP = document.querySelector('#about p');
     if (aboutP) aboutP.textContent = cv.basics.summary;
 
+    // Update Experience
     var expSection = document.querySelector('#experience ul');
     if (expSection && cv.work) {
       expSection.innerHTML = cv.work.map(function(w) {
@@ -92,6 +119,7 @@ const { name, label } = basics
       }).join('');
     }
 
+    // Update Education
     var eduSection = document.querySelector('#education ul');
     if (eduSection && cv.education) {
       eduSection.innerHTML = cv.education.map(function(e) {
@@ -99,6 +127,7 @@ const { name, label } = basics
       }).join('');
     }
 
+    // Update Projects
     var projSection = document.querySelector('#projects ul');
     if (projSection && cv.projects) {
       projSection.innerHTML = cv.projects.map(function(p) {
@@ -106,6 +135,7 @@ const { name, label } = basics
       }).join('');
     }
 
+    // Update Skills
     var skillsSection = document.querySelector('#skills ul');
     if (skillsSection && cv.skills) {
       skillsSection.innerHTML = cv.skills.map(function(s) {
@@ -113,8 +143,11 @@ const { name, label } = basics
       }).join('');
     }
 
+    // Update CV button
     var cvBtn = document.querySelector('.cv-button');
+    var cvBtnText = document.querySelector('.cv-button-text');
     if (cvBtn) cvBtn.href = currentLang === 'en' ? '/Portfolio/cv/Saydenier-Palacios-ENG.pdf' : '/Portfolio/cv/Saydenier-Palacios-ESP.pdf';
+    if (cvBtnText) cvBtnText.textContent = ui.downloadCV;
   }
 
   loadCVData();
