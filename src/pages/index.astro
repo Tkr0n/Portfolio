@@ -31,6 +31,8 @@ const { name, label } = basics
     es: { about: "Sobre mí", experience: "Experiencia", education: "Educación", projects: "Proyectos", skills: "Habilidades", today: "Hoy", actual: "Actual" }
   };
 
+  var globeSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg> ';
+
   async function loadCVData() {
     var enRes = await fetch('/Portfolio/cv-en.json');
     var esRes = await fetch('/Portfolio/cv-es.json');
@@ -76,7 +78,7 @@ const { name, label } = basics
       if (city) parts.push(city);
       if (region) parts.push(region);
       if (parts.length > 0) {
-        heroLocation.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#world-map"></use></svg> ' + parts.join(', ');
+        heroLocation.innerHTML = globeSVG + parts.join(', ');
       }
     }
 
